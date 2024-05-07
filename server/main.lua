@@ -3,13 +3,13 @@ AddEventHandler('esx_EasyPhone:NewCall', function(playerID, recipientID, channel
 	for k,v in ipairs(GetPlayers()) do
         local id = v
         if v == recipientID then
-			local player = source
-            local playerName = GetPlayerName(player)
-            TriggerClientEvent('esx_EasyPhone:CallRequest', recipientID, playerName, source, channelID)
-            if Config.EnableServerLog then
-                print('' .. playerName .. ' is calling player ' .. recipientID .. ' on channel ' .. channelID)
-            end
-			break
+		local player = source
+            	local playerName = GetPlayerName(player)
+            	TriggerClientEvent('esx_EasyPhone:CallRequest', recipientID, playerName, source, channelID)
+            	if Config.EnableServerLog then
+                	print('' .. playerName .. ' is calling player ' .. recipientID .. ' on channel ' .. channelID)
+            	end
+		break
         end
     end
 end)
